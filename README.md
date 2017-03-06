@@ -85,8 +85,6 @@ The code for this step is contained in the get_hog_features() function in the "h
 
 To check for the existance of a car I used sliding window technique. In order to imporove performance I have chosed to only slide throught he lower half of the image, as this is the part where we expect to see cars. For the window size I have chosed size of 96x96 and overlap fraction of 75%. Those values were set based on some exploratory testing and discovery.
 
-![alt text][image3]
-
 ####2. Pipeline example.
 
 As described above, I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a good result. Here are some example images:
@@ -96,7 +94,8 @@ As described above, I searched on two scales using YCrCb 3-channel HOG features 
 
 ### Video Implementation
 
-####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
+####1. Vehicle detection video output.
+
 Here's a [link to my video result](./project_video.mp4)
 
 
