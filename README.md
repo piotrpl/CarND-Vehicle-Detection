@@ -45,6 +45,8 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 ####2. HOG parameters selection.
 
+The code for this step is contained in the get_hog_features() function in the "helper functions" section of the `some_file.py` IPython notebook.
+
 HOG feature extraction is done usig get_hog_features() function. This function takes image together with the HOG parameters returning HOG extracted features. Images, before feature exetraction are convered to the YCrCb color space. HOG features are extracted for each channel. Ilustration of the HOG features extraction can be seen in the above section.
 
 Parameers were selected based on the exploration, also performed as part of one of the lessons during perparation for this project. For the final selection/verification of parameters and its values I used linear SVN classifier and the training accuracy. The best results I have achieved using parameters shown below
@@ -62,9 +64,12 @@ hist_feat = True
 hog_feat = True
 ```
 
-####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
+####3. Classifier training.
 
-I trained a linear SVM using...
+The code for this step is contained in the get_hog_features() function in the "helper functions" section of the `some_file.py` IPython notebook.
+
+My SVN classifier is trained using previously loaded data out of which 10% is used as a test data set. Data is shuffeled before training. The classifier extracts features, normlizes them and stack on top of each other. Next to the HOG feature extraction I have also used histogram of color values in an image combined with spacial binning of color. Using the above parameters reulsted in the following accuracy:
+
 
 ###Sliding Window Search
 
