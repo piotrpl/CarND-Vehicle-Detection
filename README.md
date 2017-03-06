@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 [image1]: ./output_images/car_notcar.png
 [image2]: ./output_images/HOG_example_car.jpg
 [image3]: ./output_images/HOG_example_notcar.jpg
-[image4]: ./examples/sliding_window.jpg
+[image4]: ./output_images/slide_window_example.jpg
 [image5]: ./examples/bboxes_and_heat.png
 [image6]: ./examples/labels_map.png
 [image7]: ./examples/output_bboxes.png
@@ -83,14 +83,13 @@ Test Accuracy of SVC =  0.9876
 
 The code for this step is contained in the get_hog_features() function in the "helper functions" section of the `some_file.py` IPython notebook.
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
-How did you decide what scales to search and how much to overlap windows?
+To check for the existance of a car I used sliding window technique. In order to imporove performance I have chosed to only slide throught he lower half of the image, as this is the part where we expect to see cars. For the window size I have chosed size of 96x96 and overlap fraction of 75%. Those values were set based on some exploratory testing and discovery.
 
 ![alt text][image3]
 
-####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
+####2. Pipeline example.
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+As described above, I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a good result. Here are some example images:
 
 ![alt text][image4]
 ---
