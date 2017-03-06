@@ -15,10 +15,11 @@ The goals / steps of this project are the following:
 [image1]: ./output_images/car_notcar.png
 [image2]: ./output_images/HOG_example_car.jpg
 [image3]: ./output_images/HOG_example_notcar.jpg
-[image4]: ./output_images/slide_window_example.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
-[image7]: ./examples/output_bboxes.png
+[image4]: ./output_images/sliding_windows.jpg
+[image5]: ./output_images/sliding_window.jpg
+[image6]: ./examples/bboxes_and_heat.png
+[image7]: ./examples/labels_map.png
+[image8]: ./examples/output_bboxes.png
 [video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -85,11 +86,13 @@ The code for this step is contained in the get_hog_features() function in the "h
 
 To check for the existance of a car I used sliding window technique. In order to imporove performance I have chosed to only slide throught he lower half of the image, as this is the part where we expect to see cars. For the window size I have chosed size of 96x96 and overlap fraction of 75%. Those values were set based on some exploratory testing and discovery.
 
+![alt text][image4]
+
 ####2. Pipeline example.
 
 As described above, I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a good result. Here are some example images:
 
-![alt text][image4]
+![alt text][image5]
 ---
 
 ### Video Implementation
