@@ -12,7 +12,7 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./output_images/car_not_car.png
+[image1]: ./output_images/car_notcar.png
 [image2]: ./output_images/HOG_example_car.jpg
 [image3]: ./output_images/HOG_example_notcar.jpg
 [image4]: ./examples/sliding_window.jpg
@@ -43,7 +43,7 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 ![alt text][image2]
 ![alt text][image3]
 
-####2. Explain how you settled on your final choice of HOG parameters.
+####2. HOG parameters selection.
 
 I tried various combinations of parameters and...
 
