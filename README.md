@@ -68,14 +68,23 @@ hog_feat = True
 
 The code for this step is contained in the get_hog_features() function in the "helper functions" section of the `some_file.py` IPython notebook.
 
-My SVN classifier is trained using previously loaded data out of which 10% is used as a test data set. Data is shuffeled before training. The classifier extracts features, normlizes them and stack on top of each other. Next to the HOG feature extraction I have also used histogram of color values in an image combined with spacial binning of color. Using the above parameters reulsted in the following accuracy:
+My SVN classifier is trained using previously loaded data out of which 10% is used as a test data set. Data is shuffeled before training. The classifier extracts features, normlizes them and stack on top of each other. Next to the HOG feature extraction I have also used histogram of color values in an image combined with spacial binning of color. Using the above parameters reulsted in the following outcome:
 
+```
+Using: 8 orientations 8 pixels per cell and 2 cells per block
+Feature vector length: 5568
+16.43 Seconds to train SVC...
+Test Accuracy of SVC =  0.9876
+```
 
 ###Sliding Window Search
 
-####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
+####1. Sliding window search.
+
+The code for this step is contained in the get_hog_features() function in the "helper functions" section of the `some_file.py` IPython notebook.
 
 I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+How did you decide what scales to search and how much to overlap windows?
 
 ![alt text][image3]
 
