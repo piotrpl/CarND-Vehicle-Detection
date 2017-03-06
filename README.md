@@ -1,6 +1,4 @@
-##Vehicle Detection
-
----
+#Vehicle Detection
 
 **Vehicle Detection Project**
 
