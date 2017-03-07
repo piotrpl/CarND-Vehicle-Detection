@@ -17,9 +17,12 @@ The goals / steps of this project are the following:
 [image3]: ./output_images/HOG_example_notcar.jpg
 [image4]: ./output_images/sliding_windows.jpg
 [image5]: ./output_images/sliding_window.jpg
-[image6]: ./examples/bboxes_and_heat.png
-[image7]: ./examples/labels_map.png
-[image8]: ./examples/output_bboxes.png
+[image6]: ./output_images/video_frame1.png.png
+[image7]: ./output_images/video_frame2.png.png
+[image8]: ./output_images/video_frame3.png.png
+[image9]: ./output_images/video_frame4.png.png
+[image10]: ./output_images/video_frame5.png.png
+[image11]: ./output_images/video_frame6.png.png
 [video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -108,12 +111,14 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
-### Here are six frames and their corresponding heatmaps:
+### Here are six frames, their corresponding heatmaps and the output of `scipy.ndimage.measurements.label()` for each image
 
-![alt text][image5]
-
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
 ![alt text][image6]
+![alt text][image7]
+![alt text][image8]
+![alt text][image9]
+![alt text][image10]
+![alt text][image11]
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
 ![alt text][image7]
