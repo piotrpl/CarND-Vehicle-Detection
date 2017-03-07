@@ -104,7 +104,7 @@ As described above, I searched on two scales using YCrCb 3-channel HOG features 
 
 ####1. Vehicle detection video output.
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](https://www.dropbox.com/s/5ksq88r2gncd2j8/result_project_video.mp4?dl=0)
 
 
 ####2. Filter for false positives and overlapping bounding boxes.
