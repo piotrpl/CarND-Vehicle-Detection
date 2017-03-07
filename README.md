@@ -105,9 +105,14 @@ As described above, I searched on two scales using YCrCb 3-channel HOG features 
 Here's a [link to my video result](./project_video.mp4)
 
 
-####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
+####2. Filter for false positives and overlapping bounding boxes.
 
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
+The code for this step is contained in the get_hog_features() function in the "helper functions" section of the `some_file.py` IPython notebook.
+
+
+I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap. Furhter, assuming that each blob corresponded to a vehicle I constructed bounding boxes to cover the area of each blob detected.
+
+Even though identifying individual blobs helped tremendously to reduce amount of false positives in the solution, I was still faced with some in my video. As a way of further reducing them down I have collected bounding boxes across number of frames using `deque` and then applied heatmap and "labeling" on this list. The effect can be seen in the final video and is also discussed in the final part of this writeup.
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
@@ -127,9 +132,8 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ---
 
-###Discussion
+###Discussion & future consideartions
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
-
+1. The white car is tricky to be kept detected as it gets farther. I believe that this could be fixed by increasing the overlap of windows when applying sliding windows on a frame, e.g. to 90%. This on the other hand would come as very expensive computation task and would increase the time of the video processing significantly. In the end I have compromised on the 75% overlap which yielded satisfactory results.
+2. Retrieving HOG features seems to be quite expensive as well although it is something that can't be avoided as it directly correlates to the accuracy of our classifier. Applying deep learning or some sort of hybrid solution here could be a better solution providing more flexibility in tuning up parameters.
+3. In order to reduce false positives I have used heatmap and data "labeling" in order to create bounding boxes. This helped a lot but did not fully removed false positives. Further, with applying this pipeline on each individaul frame frames around cards where wobbling a lot which was not desired. As a step to improve it I tried to "cache" hot windows in a global `deque` accross few frames and create bouding boxes on larger set of windows. This helped in reducing the wobbling effect but did not help with reducing other outstanding false positives. As a final solution I have "cached" with `deque` bounding boxes across few frames and then applied heatmap and "labeling" on top if. This hepled eliminating false positives but on the other hand made the bounding boxes not alway wrapping the car in its fullnes. Definitely it seems like a right direction but it could see some further improvements.
