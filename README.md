@@ -34,7 +34,7 @@ The goals / steps of this project are the following:
 
 ####1. HOG features extraction from the training images.
 
-The code for this step is contained in the `get_hog_features()` function in the "helper functions" section and "Reading images of two classes for training and testing" section of the `solution.ipny` IPython notebook.
+The code for this step is contained in the `get_hog_features()` function in the "helper functions" section and "Reading images of two classes for training and testing" section of the `solution.ipnyb` IPython notebook.
 
 I started by reading in all the `vehicle` and `non-vehicle` .png images taken from the GTI vehicle image database and the KITTI vision benchmark suite. Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
@@ -50,7 +50,7 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 ####2. HOG parameters selection.
 
-The code for this step is contained in the "The feature parameters" section of the `solution.ipny` IPython notebook.
+The code for this step is contained in the "The feature parameters" section of the `solution.ipnyb` IPython notebook.
 
 HOG feature extraction is done usig get_hog_features() function. This function takes image together with the HOG parameters returning HOG extracted features. Images, before feature exetraction are convered to the YCrCb color space. HOG features are extracted for each channel. Ilustration of the HOG features extraction can be seen in the above section.
 
@@ -71,7 +71,7 @@ hog_feat = True
 
 ####3. Classifier training.
 
-The code for this step is contained in the "Classifier training" section of the `solution.ipny` IPython notebook.
+The code for this step is contained in the "Classifier training" section of the `solution.ipnyb` IPython notebook.
 
 My SVN classifier is trained using previously loaded data out of which 10% is used as a test data set. Data is shuffeled before training. The classifier extracts features, normlizes them and stack on top of each other. Next to the HOG feature extraction I have also used histogram of color values in an image combined with spacial binning of color. Using the above parameters reulsted in the following outcome:
 
@@ -86,7 +86,7 @@ Test Accuracy of SVC =  0.9876
 
 ####1. Sliding window search.
 
-The code for this step is contained in the `slide_window()` function in the "helper functions" section of the `solution.ipny` IPython notebook.
+The code for this step is contained in the `slide_window()` function in the "helper functions" section of the `solution.ipnyb` IPython notebook.
 
 To check for the existance of a car I used sliding window technique. In order to imporove performance I have chosed to only slide throught he lower half of the image, as this is the part where we expect to see cars. For the window size I have chosed size of 96x96 and overlap fraction of 75%. Those values were set based on some exploratory testing and discovery.
 
@@ -94,7 +94,7 @@ To check for the existance of a car I used sliding window technique. In order to
 
 ####2. Pipeline example.
 
-The code for this step is contained in the `search_windows()` function in the "helper functions" section of the `solution.ipny` IPython notebook.
+The code for this step is contained in the `search_windows()` function in the "helper functions" section of the `solution.ipnyb` IPython notebook.
 
 As described above, I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a good result. Here are some example images:
 
@@ -110,7 +110,7 @@ Here's a [link to my video result](https://www.dropbox.com/s/5ksq88r2gncd2j8/res
 
 ####2. Filter for false positives and overlapping bounding boxes.
 
-The code for this step is contained in the `process_heat()` function in the "pipeline" section of the `solution.ipny` IPython notebook.
+The code for this step is contained in the `process_heat()` function in the "pipeline" section of the `solution.ipnyb` IPython notebook.
 
 I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap. Furhter, assuming that each blob corresponded to a vehicle I constructed bounding boxes to cover the area of each blob detected.
 
