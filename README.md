@@ -17,12 +17,12 @@ The goals / steps of this project are the following:
 [image3]: ./output_images/HOG_example_notcar.jpg
 [image4]: ./output_images/sliding_windows.jpg
 [image5]: ./output_images/sliding_window.jpg
-[image6]: ./output_images/video_frame1.png.png
-[image7]: ./output_images/video_frame2.png.png
-[image8]: ./output_images/video_frame3.png.png
-[image9]: ./output_images/video_frame4.png.png
-[image10]: ./output_images/video_frame5.png.png
-[image11]: ./output_images/video_frame6.png.png
+[image6]: ./output_images/video_frame1.png
+[image7]: ./output_images/video_frame2.png
+[image8]: ./output_images/video_frame3.png
+[image9]: ./output_images/video_frame4.png
+[image10]: ./output_images/video_frame5.png
+[image11]: ./output_images/video_frame6.png
 [video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
