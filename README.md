@@ -23,6 +23,7 @@ The goals / steps of this project are the following:
 [image9]: ./output_images/video_frame4.png
 [image10]: ./output_images/video_frame5.png
 [image11]: ./output_images/video_frame6.png
+[image12]: ./output_images/video_final_frame.png
 [video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -127,7 +128,7 @@ Here's an example result showing the heatmap from a series of frames of video, t
 ![alt text][image11]
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
+![alt text][image12]
 
 
 
